@@ -1,0 +1,23 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: user-service-demo
+  datasource:
+    password: root
+    username: root
+    url: jdbc:mysql://localhost:3306/leyou?serverTimezone=UTC
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 10
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:   #这个地址是Eureka Server的地址，注意一定要加上eureka
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    prefer-ip-address: true #当调用getHostname获取实例的hostname时，返回ip而不是host名称
+    ip-address: 127.0.0.1 # 指定自己的ip信息，不指定的话会自己寻找
+mybatis:
+  type-aliases-package: com.leyou.userservicedemo.pojo

@@ -24,7 +24,7 @@ public class UserController {
 
   @GetMapping("/{id}")
   @ResponseBody
-  public User queryUserById(@PathVariable("id") Long id) {
+  public User queryUserById(@PathVariable("id") Long id) throws InterruptedException {
     return this.userService.queryById(id);
   }
 

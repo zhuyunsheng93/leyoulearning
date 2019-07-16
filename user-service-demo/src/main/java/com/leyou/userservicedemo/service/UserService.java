@@ -4,6 +4,8 @@ import com.leyou.userservicedemo.mapper.UserMapper;
 import com.leyou.userservicedemo.pojo.User;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,7 +20,8 @@ public class UserService {
   @Autowired
   private UserMapper userMapper;
 
-  public User queryById(Long id) {
+  public User queryById(Long id)throws InterruptedException {
+    Thread.sleep(new Random().nextInt(2000));
     return this.userMapper.selectByPrimaryKey(id);
   }
 

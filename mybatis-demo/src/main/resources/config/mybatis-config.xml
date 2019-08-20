@@ -6,17 +6,20 @@
   <properties>
     <property name="driver" value="com.mysql.jdbc.Driver"/>
     <property name="url"
-      value="jdbc:mysql://127.0.0.1:3306/mybatis?useSSL=true&serveTimezone=UTC"/>
+      value="jdbc:mysql://127.0.0.1:3306/ssmdemo?useSSL=true&amp;serveTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
     <property name="password" value="root"/>
     <property name="name" value="root"/>
   </properties>
+  <settings>
+    <setting name="mapUnderscoreToCamelCase" value="true"/>
+  </settings>
   <environments default="dev">
     <environment id="dev">
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED">
         <property name="url"
-          value="jdbc:mysql://127.0.0.1:3306/mybaits?useSSL=true&serverTimezone=UTC"/>
-        <property name="name" value="root"/>
+          value="jdbc:mysql://127.0.0.1:3306/ssmdemo?useSSL=true&amp;serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+        <property name="username" value="root"/>
         <property name="password" value="root"/>
         <property name="driver" value="com.mysql.jdbc.Driver"/>
       </dataSource>
@@ -25,7 +28,7 @@
       <transactionManager type="JDBC"/>
       <dataSource type="POOLED">
         <property name="url" value="${url}"/>
-        <property name="name" value="${name}"/>
+        <property name="username" value="${name}"/>
         <property name="password" value="${password}"/>
         <property name="driver" value="${driver}"/>
       </dataSource>
@@ -33,5 +36,6 @@
   </environments>
   <mappers>
     <mapper resource="mappers/MyMapper.xml"/>
+    <mapper resource="mappers/UserDaoMapper.xml"/>
   </mappers>
 </configuration>

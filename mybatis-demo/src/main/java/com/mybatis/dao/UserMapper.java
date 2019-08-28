@@ -1,4 +1,4 @@
-package com.mybatis.dao;
+package mappers;
 
 import com.mybatis.pojo.User;
 import java.util.List;
@@ -29,7 +29,7 @@ public interface UserMapper {
    * @param id
    * @return
    */
-  public User queryUserById(Long id);
+  public User queryUserById(String id);
 
   /**
    * 查询所有用户信息
@@ -53,6 +53,6 @@ public interface UserMapper {
    * 根据id删除用户信息
    * @param id
    */
-  public void deleteUserById(Long id);
+  public void deleteUserById(String id);
 
 }

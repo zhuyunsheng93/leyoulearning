@@ -24,7 +24,7 @@ public class BrandService {
         }
         if (StringUtils.isNotBlank(sortBy)
         ) {
-            String orderByClause = sortBy + (desc ? "DESC" : "ASC");
+            String orderByClause = sortBy + " "+(desc ? "DESC" : "ASC");
             example.setOrderByClause(orderByClause);
         }
         //查询

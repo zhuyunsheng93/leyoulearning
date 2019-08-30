@@ -22,13 +22,14 @@ import org.junit.Test;
 public class DynamicSqlMapperTest {
 
   private DynamicSqlMapper dynamicSqlMapper;
+  private SqlSession sqlSession;
 
   @Before
   public void setUp() throws Exception {
     String resource = "config/mybatis-config.xml";
     InputStream inputStream = Resources.getResourceAsStream(resource);
     SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-    SqlSession sqlSession = sqlSessionFactory.openSession(true);
+     sqlSession = sqlSessionFactory.openSession(true);
     this.dynamicSqlMapper = sqlSession.getMapper(DynamicSqlMapper.class);
   }
   /**
@@ -37,6 +38,7 @@ public class DynamicSqlMapperTest {
   @Test
   public void queryUserList(){
     List<User> users = this.dynamicSqlMapper.queryUserList("");
+    this.dynamicSqlMapper.queryUserList("");
     this.dynamicSqlMapper.queryUserList("");
     for(User user:users){
       System.out.println(user);

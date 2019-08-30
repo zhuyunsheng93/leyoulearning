@@ -1,17 +1,21 @@
 package com.mybatis.pojo;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Author: zhuyunsheng
  * @Date: 2019/8/29 19:11
  */
 public class Order {
+
   private Integer id;
   private Long userId;
   private String orderNumber;
   private Date created;
   private Date updated;
+  private User user;
+  private List<OrderDetail> detailList;
 
   public Integer getId() {
     return id;
@@ -51,5 +55,33 @@ public class Order {
 
   public void setUpdated(Date updated) {
     this.updated = updated;
+  }
+
+  public User getUser() {
+    return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
+  }
+
+  public List<OrderDetail> getDetailList() {
+    return detailList;
+  }
+
+  public void setDetailList(List<OrderDetail> detailList) {
+    this.detailList = detailList;
+  }
+
+  @Override
+  public String toString() {
+    return "Order{" +
+        "id=" + id +
+        ", userId=" + userId +
+        ", orderNumber='" + orderNumber + '\'' +
+        ", created=" + created +
+        ", updated=" + updated +
+        ", user=" + user +
+        '}';
   }
 }

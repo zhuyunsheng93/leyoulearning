@@ -83,4 +83,25 @@ public class OrderUser extends Order {
   public void setUpdated(Date updated) {
     this.updated = updated;
   }
+
+  @Override
+  public String toString() {
+    super.toString();
+    return "OrderUser{" +
+        "userName='" + userName + '\'' +
+        ", password='" + password + '\'' +
+        ", name='" + name + '\'' +
+        ", age=" + age +
+        ", sex=" + sex +
+        ", birthday=" + birthday +
+        ", created=" + created +
+        ", updated=" + updated +
+        '}'+"Order{" +
+        "id=" + super.getId() +
+        ", userId=" + super.getUserId() +
+        ", orderNumber='" + super.getOrderNumber() + '\'' +
+        ", created=" + super.getCreated() +
+        ", updated=" + super.getUpdated() +
+        '}';
+  }
 }

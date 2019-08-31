@@ -38,6 +38,7 @@ public class DynamicSqlMapperTest {
   public void queryUserList(){
     List<User> users = this.dynamicSqlMapper.queryUserList("");
     this.dynamicSqlMapper.queryUserList("");
+    this.dynamicSqlMapper.queryUserList("");
     for(User user:users){
       System.out.println(user);
     }

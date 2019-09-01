@@ -15,7 +15,7 @@ import java.util.List;
 public class UploadService {
     private static final Logger logger = LoggerFactory.getLogger(UploadService.class);
     //set type of image which can upload
-    private static final List<String> suffixs = Arrays.asList("image/png", "image/jpg");
+    private static final List<String> suffixs = Arrays.asList("image/png", "image/jpg","image/jpeg");
 
     public String upload(MultipartFile file) {
         try {
@@ -35,10 +35,11 @@ public class UploadService {
             //create the dir
             File dir = new File("D:\\leyou\\upload");
             if (!dir.exists()) {
-                dir.mkdir();
+                dir.mkdirs();
             }
             file.transferTo(new File(dir, file.getOriginalFilename()));
-            String url = "http://image.leyou.com/upload" + file.getOriginalFilename();
+            String url = "http://image.leyou.com/upload/" + file.getOriginalFilename();
+            logger.info(url);
             return url;
         } catch (Exception e) {
             return null;

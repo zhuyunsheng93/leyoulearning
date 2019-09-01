@@ -63,7 +63,7 @@ public class DynamicSqlMapperTest {
     User user = new User();
     user.setId("2");
     user.setUserName("zhuyusheng");
-    user.setName("朱运升");
+    user.setName("lalalal");
     user.setBirthday(new Date());
     user.setAge(26);
     user.setPassword("123456");

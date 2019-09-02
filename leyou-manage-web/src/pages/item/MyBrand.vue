@@ -42,7 +42,7 @@
         </v-toolbar>
         <!--对话框的内容，表单-->
         <v-card-text class="px-5">
-          <my-brand-form></my-brand-form>
+          <my-brand-form @close="closeWindow"></my-brand-form>
         </v-card-text>
 
       </v-card>

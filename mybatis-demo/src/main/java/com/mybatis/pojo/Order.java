@@ -82,6 +82,7 @@ public class Order {
         ", created=" + created +
         ", updated=" + updated +
         ", user=" + user +
+        ", detailList=" + detailList +
         '}';
   }
 }

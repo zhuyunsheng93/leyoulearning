@@ -19,4 +19,6 @@ public interface AdvancedResultSetMapper {
   OrderUser queryOrderUserByOrderNumber(@Param("number") String number);
 
   Order queryOrderWithUserByOrderNumber(@Param("number") String number);
+
+  Order queryOrderWithUserAndDetailByOrderNumber(@Param("number") String number);
 }

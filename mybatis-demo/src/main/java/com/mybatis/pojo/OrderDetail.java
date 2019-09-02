@@ -5,10 +5,12 @@ package com.mybatis.pojo;
  * @Date: 2019/8/30 14:22
  */
 public class OrderDetail {
-private Integer id;
-private Integer orderId;
-private Double totalPrice;
-private Integer status;
+
+  private Integer id;
+  private Integer orderId;
+  private Double totalPrice;
+  private Integer status;
+  private Item item;
 
   public Integer getId() {
     return id;
@@ -42,6 +44,14 @@ private Integer status;
     this.status = status;
   }
 
+  public Item getItem() {
+    return item;
+  }
+
+  public void setItem(Item item) {
+    this.item = item;
+  }
+
   @Override
   public String toString() {
     return "OrderDetail{" +
@@ -49,6 +59,8 @@ private Integer status;
         ", orderId=" + orderId +
         ", totalPrice=" + totalPrice +
         ", status=" + status +
+        ", item=" + item +
         '}';
   }
 }
+
